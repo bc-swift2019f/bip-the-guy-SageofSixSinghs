@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,76 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Bip_The_Guy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image0" translatesAutoresizingMaskIntoConstraints="NO" id="UKB-Cr-5Xx">
+                                <rect key="frame" x="16" y="20" width="343" height="457"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="rz7-9X-ciB" appends="YES" id="lHy-xh-eKr"/>
+                                </connections>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Image to Punch:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6m3-wc-dZv">
+                                <rect key="frame" x="94" y="485" width="187" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="rZ0-H4-QoR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="s1p-UT-ukW">
+                                <rect key="frame" x="88" y="514" width="199" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFk-ym-btm">
+                                        <rect key="frame" x="0.0" y="0.0" width="93" height="30"/>
+                                        <state key="normal" title="Photo Library"/>
+                                        <connections>
+                                            <action selector="libraryPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R0k-Fj-q3S"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRi-jl-PWT">
+                                        <rect key="frame" x="123" y="0.0" width="76" height="30"/>
+                                        <state key="normal" title="Take Photo"/>
+                                        <connections>
+                                            <action selector="cameraPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ypQ-pg-WhJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="UKB-Cr-5Xx" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="1MX-6v-74H"/>
+                            <constraint firstItem="6m3-wc-dZv" firstAttribute="top" secondItem="UKB-Cr-5Xx" secondAttribute="bottom" constant="8" symbolic="YES" id="DKX-Ys-9JA"/>
+                            <constraint firstItem="s1p-UT-ukW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="88" id="NVK-jH-TR6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="s1p-UT-ukW" secondAttribute="bottom" constant="123" id="Q9a-QN-RxB"/>
+                            <constraint firstItem="UKB-Cr-5Xx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="QWF-1y-mlJ"/>
+                            <constraint firstItem="s1p-UT-ukW" firstAttribute="top" secondItem="6m3-wc-dZv" secondAttribute="bottom" constant="8" symbolic="YES" id="dw1-12-3za"/>
+                            <constraint firstItem="6m3-wc-dZv" firstAttribute="centerX" secondItem="s1p-UT-ukW" secondAttribute="centerX" id="k69-te-joE"/>
+                            <constraint firstItem="UKB-Cr-5Xx" firstAttribute="centerX" secondItem="6m3-wc-dZv" secondAttribute="centerX" id="noA-tc-GNk"/>
+                            <constraint firstItem="UKB-Cr-5Xx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rKc-F6-7AA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="imageToPunch" destination="UKB-Cr-5Xx" id="Bl3-sM-a1I"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="rz7-9X-ciB">
+                    <connections>
+                        <action selector="imageTapped:" destination="BYZ-38-t0r" id="WZH-5R-n7r"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="-60" y="98.50074962518741"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="image0" width="1200" height="1200"/>
+    </resources>
 </document>
